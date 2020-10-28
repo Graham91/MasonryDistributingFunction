@@ -30,7 +30,6 @@
         width: fit-content;
         border: solid 30px black;
         display: grid;
-        column-count: 4;
         grid-template-columns: 150px 150px 150px 150px 150px 150px;
         column-gap: 1rem;
         padding: 0 10px 10px 10px;
@@ -233,6 +232,13 @@
         max-height: 100px; */
         height: auto;
         margin-top: 10px;
+        -webkit-box-shadow: 5px 5px 11px 2px rgba(0, 0, 0, 0.79);
+        box-shadow: 5px 5px 11px 2px rgba(0, 0, 0, 0.79);
+        transition: all .2s ease-in-out;
+    }
+
+    .picture:hover {
+        transform: scale(1.1);
     }
 
     #pictures {
@@ -411,7 +417,7 @@
 
                     lamb = [...numberAAA];
                     sheep = [...idAAA];
-                    sortingarray(numberAAA, 4, idAAA);
+                    sortingarray(numberAAA, 6, idAAA);
                     appendtocolumns();
                 } else {
 
