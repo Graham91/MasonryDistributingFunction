@@ -11,6 +11,8 @@
 <style>
     body {
         margin: 0;
+        overflow: hidden;
+
 
     }
 
@@ -234,7 +236,14 @@
 
     #pictures {
         visibility: hidden;
-        width: ;
+    }
+
+    #loading {
+        text-align: center;
+        margin: 20px auto;
+        padding: 10px;
+        border: solid 2px black;
+        width: fit-content;
     }
 </style>
 
@@ -265,6 +274,7 @@
         <div class=column5>
         </div>
     </div>
+    <p id="loading">IMAGES LOADING...</p>
     <!-- <div id=item0></div>
     <div id=item1></div>
     <div id=item2></div>
@@ -285,7 +295,7 @@
         $(document).ready(function () {
 
 
-            let imageAmount = 50;
+            let imageAmount = 80;
             var queryURL = "https://picsum.photos/v2/list?limit=" + imageAmount;
             let imagetotal = 0;
             // Performing our AJAX GET request
@@ -387,6 +397,8 @@
                     let locatorPlusOne = locator;
                     columnsArray[locatorPlusOne].columnArray.push(largestNumberObject.id);
                 }
+                $("body").css("overflow", "auto");
+                $("#loading").css("display", "none");
             }
             let lamb;
             let sheep;
