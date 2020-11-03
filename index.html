@@ -426,26 +426,48 @@
 
 
             function appendtocolumns(numberOfColumns) {
-                let switcher = true;
+                // let switcher = true;
                 columnsArray.forEach(e => {
-                    e.columnArray.forEach(element => {
-                        let itemstring = "#" + element
+                    let number = e.columnArray.length;
+                    for (let index = 0; index < number; index++) {
+                        console.log(e.columnArray);
+                        let randomNumber = findRandomNumber(e.columnArray.length);
+                        const element = e.columnArray[randomNumber];
+                        const index2 = randomNumber;
+                        console.log(index2);
+                        e.columnArray.splice(index2, 1);
+                        let itemstring = "#" + element;
+                        console.log(itemstring);
                         let item = $(itemstring).clone();
                         $(itemstring).remove();
-                        if (switcher === true) {
-                            $(e.columnClass).append(item);
-                            switcher = generaterandomTrueFalse()
-                        } else {
-                            $(e.columnClass).prepend(item);
-                            switcher = generaterandomTrueFalse();
-                        }
-                    });
+                        $(e.columnClass).append(item);
+                    }
+                    // e.columnArray.forEach(element => {
 
+                    //     let itemstring = "#" + element
+                    //     let item = $(itemstring).clone();
+                    //     $(itemstring).remove();
+
+                    // if (switcher === true) {
+                    //     $(e.columnClass).append(item);
+                    //     switcher = generaterandomTrueFalse()
+                    // } else {
+                    //     $(e.columnClass).prepend(item);
+                    //     switcher = generaterandomTrueFalse();
+                    // }
                 });
+
 
 
             }
 
+            let randomNumberarray = [];
+            function findRandomNumber(bigNumber) {
+                let randomnumber = Math.floor(Math.random() * Math.floor(bigNumber));
+                randomNumberarray.push(randomnumber);
+                // console.log(randomNumberarray);
+                return randomnumber;
+            }
             function generaterandomTrueFalse() {
                 randomnumber = Math.floor(Math.random() * Math.floor(2));
                 if (randomnumber === 0) {
