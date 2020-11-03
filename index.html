@@ -251,6 +251,55 @@
         padding: 10px;
         border: solid 2px black;
         width: fit-content;
+        background: linear-gradient(329deg, #21f4be, #a0f421, #b621f4, #f43121);
+        background-size: 800% 800%;
+
+        -webkit-animation: AnimationName 10s ease infinite;
+        -moz-animation: AnimationName 10s ease infinite;
+        animation: AnimationName 10s ease infinite;
+    }
+
+
+    @-webkit-keyframes AnimationName {
+        0% {
+            background-position: 9% 0%
+        }
+
+        50% {
+            background-position: 92% 100%
+        }
+
+        100% {
+            background-position: 9% 0%
+        }
+    }
+
+    @-moz-keyframes AnimationName {
+        0% {
+            background-position: 9% 0%
+        }
+
+        50% {
+            background-position: 92% 100%
+        }
+
+        100% {
+            background-position: 9% 0%
+        }
+    }
+
+    @keyframes AnimationName {
+        0% {
+            background-position: 9% 0%
+        }
+
+        50% {
+            background-position: 92% 100%
+        }
+
+        100% {
+            background-position: 9% 0%
+        }
     }
 </style>
 
@@ -430,14 +479,14 @@
                 columnsArray.forEach(e => {
                     let number = e.columnArray.length;
                     for (let index = 0; index < number; index++) {
-                        console.log(e.columnArray);
+                        // console.log(e.columnArray);
                         let randomNumber = findRandomNumber(e.columnArray.length);
                         const element = e.columnArray[randomNumber];
                         const index2 = randomNumber;
-                        console.log(index2);
+                        // console.log(index2);
                         e.columnArray.splice(index2, 1);
                         let itemstring = "#" + element;
-                        console.log(itemstring);
+                        // console.log(itemstring);
                         let item = $(itemstring).clone();
                         $(itemstring).remove();
                         $(e.columnClass).append(item);
